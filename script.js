@@ -1,0 +1,783 @@
+// Your WhatsApp business number, with country code and without + or spaces.
+const BUSINESS_WHATSAPP = '917992081882';
+// These are example products and prices. Replace them with your own inventory.
+const DEFAULT_PRODUCTS = [
+  {
+    "id": "vase",
+    "name": "The Forma Vase",
+    "category": "Decor",
+    "description": "A sculptural touch for any corner",
+    "price": "₹1,299",
+    "image": "images/vase.jpg",
+    "badge": ""
+  },
+  {
+    "id": "cushion",
+    "name": "The Linen Cushion",
+    "category": "Living",
+    "description": "Soft texture, effortless comfort",
+    "price": "₹1,499",
+    "image": "images/cushion.jpg",
+    "badge": ""
+  },
+  {
+    "id": "mug",
+    "name": "The Everyday Mug",
+    "category": "Dining",
+    "description": "For your favourite slow mornings",
+    "price": "₹799",
+    "image": "images/mug.jpg",
+    "badge": ""
+  },
+  {
+    "id": "lamp",
+    "name": "The Sol Table Lamp",
+    "category": "Lighting",
+    "description": "A little warmth, wherever it goes",
+    "price": "₹3,499",
+    "image": "images/lamp.jpg",
+    "badge": ""
+  },
+  {
+    "id": "tray",
+    "name": "The Gather Tray",
+    "category": "Decor",
+    "description": "A home for your little essentials",
+    "price": "₹1,199",
+    "image": "images/tray.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-1-2",
+    "name": "Floral Cushion Cover",
+    "category": "Living",
+    "description": "A cosy layer for the living room",
+    "price": "₹1,499",
+    "image": "images/products/living-1-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-1-2",
+    "name": "Classic Ceramic Mug",
+    "category": "Dining",
+    "description": "A lovely companion for everyday sips",
+    "price": "₹699",
+    "image": "images/products/dining-1-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-1-2",
+    "name": "Pleated Shade Table Lamp",
+    "category": "Lighting",
+    "description": "A soft accent for the spaces you love",
+    "price": "₹2,999",
+    "image": "images/products/lighting-1-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "vase2",
+    "name": "The Mini Ceramic Vase",
+    "category": "Decor",
+    "description": "A simple piece with a lot of charm",
+    "price": "₹899",
+    "image": "images/vase2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-1-3",
+    "name": "Textured Cushion Cover",
+    "category": "Living",
+    "description": "A cosy layer for the living room",
+    "price": "₹1,999",
+    "image": "images/products/living-1-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-1-3",
+    "name": "Minimal Coffee Mug",
+    "category": "Dining",
+    "description": "A lovely companion for everyday sips",
+    "price": "₹899",
+    "image": "images/products/dining-1-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-1-3",
+    "name": "Textured Table Lamp",
+    "category": "Lighting",
+    "description": "A soft accent for the spaces you love",
+    "price": "₹3,999",
+    "image": "images/products/lighting-1-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-1-4",
+    "name": "Matte Vase Collection",
+    "category": "Decor",
+    "description": "A decorative accent for shelves and tables",
+    "price": "₹1,299",
+    "image": "images/products/decor-1-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-1-4",
+    "name": "Block Print Cushion Cover",
+    "category": "Living",
+    "description": "A cosy layer for the living room",
+    "price": "₹2,499",
+    "image": "images/products/living-1-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-1-4",
+    "name": "Cream Stoneware Mug",
+    "category": "Dining",
+    "description": "A lovely companion for everyday sips",
+    "price": "₹1,199",
+    "image": "images/products/dining-1-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-1-4",
+    "name": "Round Ceramic Table Lamp",
+    "category": "Lighting",
+    "description": "A soft accent for the spaces you love",
+    "price": "₹4,999",
+    "image": "images/products/lighting-1-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-1-5",
+    "name": "Neutral Vase Set",
+    "category": "Decor",
+    "description": "A decorative accent for shelves and tables",
+    "price": "₹1,599",
+    "image": "images/products/decor-1-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-1-5",
+    "name": "Soft Fringe Cushion Cover",
+    "category": "Living",
+    "description": "A cosy layer for the living room",
+    "price": "₹2,999",
+    "image": "images/products/living-1-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-1-5",
+    "name": "Two Tone Ceramic Mug",
+    "category": "Dining",
+    "description": "A lovely companion for everyday sips",
+    "price": "₹1,499",
+    "image": "images/products/dining-1-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-1-5",
+    "name": "Adair Style Table Lamp",
+    "category": "Lighting",
+    "description": "A soft accent for the spaces you love",
+    "price": "₹5,499",
+    "image": "images/products/lighting-1-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-2-1",
+    "name": "Ivory Ceramic Planter",
+    "category": "Decor",
+    "description": "A fresh home for your favourite greenery",
+    "price": "₹1,399",
+    "image": "images/products/decor-2-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-2-1",
+    "name": "Jacquard Throw",
+    "category": "Living",
+    "description": "An inviting layer for slower moments",
+    "price": "₹1,199",
+    "image": "images/products/living-2-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-2-1",
+    "name": "Taupe Dinner Plate",
+    "category": "Dining",
+    "description": "An easy addition to your table setting",
+    "price": "₹699",
+    "image": "images/products/dining-2-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-2-1",
+    "name": "White Linen Floor Lamp",
+    "category": "Lighting",
+    "description": "An ambient light for a cosy corner",
+    "price": "₹2,699",
+    "image": "images/products/lighting-2-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-2-2",
+    "name": "Patterned Planter Pot",
+    "category": "Decor",
+    "description": "A fresh home for your favourite greenery",
+    "price": "₹1,699",
+    "image": "images/products/decor-2-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-2-2",
+    "name": "Fleur Throw Blanket",
+    "category": "Living",
+    "description": "An inviting layer for slower moments",
+    "price": "₹1,699",
+    "image": "images/products/living-2-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-2-2",
+    "name": "Green Dinner Plate",
+    "category": "Dining",
+    "description": "An easy addition to your table setting",
+    "price": "₹899",
+    "image": "images/products/dining-2-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-2-2",
+    "name": "Slim Linen Floor Lamp",
+    "category": "Lighting",
+    "description": "An ambient light for a cosy corner",
+    "price": "₹3,199",
+    "image": "images/products/lighting-2-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-2-3",
+    "name": "Modern Planter Set",
+    "category": "Decor",
+    "description": "A fresh home for your favourite greenery",
+    "price": "₹1,099",
+    "image": "images/products/decor-2-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-2-3",
+    "name": "Striped Fringe Throw",
+    "category": "Living",
+    "description": "An inviting layer for slower moments",
+    "price": "₹2,199",
+    "image": "images/products/living-2-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-2-3",
+    "name": "Speckled Dinner Plate",
+    "category": "Dining",
+    "description": "An easy addition to your table setting",
+    "price": "₹1,099",
+    "image": "images/products/dining-2-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-2-3",
+    "name": "Modern Floor Lamp",
+    "category": "Lighting",
+    "description": "An ambient light for a cosy corner",
+    "price": "₹4,199",
+    "image": "images/products/lighting-2-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-2-4",
+    "name": "Minimal Indoor Planter",
+    "category": "Decor",
+    "description": "A fresh home for your favourite greenery",
+    "price": "₹1,499",
+    "image": "images/products/decor-2-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-2-4",
+    "name": "Geometric Throw",
+    "category": "Living",
+    "description": "An inviting layer for slower moments",
+    "price": "₹2,699",
+    "image": "images/products/living-2-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-2-4",
+    "name": "White Ceramic Plate",
+    "category": "Dining",
+    "description": "An easy addition to your table setting",
+    "price": "₹1,399",
+    "image": "images/products/dining-2-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-2-4",
+    "name": "Cylinder Shade Floor Lamp",
+    "category": "Lighting",
+    "description": "An ambient light for a cosy corner",
+    "price": "₹5,199",
+    "image": "images/products/lighting-2-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-2-5",
+    "name": "Chevron Planter Pot",
+    "category": "Decor",
+    "description": "A fresh home for your favourite greenery",
+    "price": "₹1,799",
+    "image": "images/products/decor-2-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-2-5",
+    "name": "Tassel Throw Blanket",
+    "category": "Living",
+    "description": "An inviting layer for slower moments",
+    "price": "₹3,199",
+    "image": "images/products/living-2-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-2-5",
+    "name": "Earthy Rimmed Plate",
+    "category": "Dining",
+    "description": "An easy addition to your table setting",
+    "price": "₹1,699",
+    "image": "images/products/dining-2-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-2-5",
+    "name": "Contemporary Floor Lamp",
+    "category": "Lighting",
+    "description": "An ambient light for a cosy corner",
+    "price": "₹5,699",
+    "image": "images/products/lighting-2-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-3-1",
+    "name": "The Everyday Candle",
+    "category": "Decor",
+    "description": "A warm finishing touch for your space",
+    "price": "₹1,599",
+    "image": "images/products/decor-3-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-3-1",
+    "name": "Round Rope Mirror",
+    "category": "Living",
+    "description": "A simple accent to open up your space",
+    "price": "₹1,399",
+    "image": "images/products/living-3-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-3-1",
+    "name": "Speckled Bowl Set",
+    "category": "Dining",
+    "description": "A versatile piece for your dining table",
+    "price": "₹899",
+    "image": "images/products/dining-3-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-3-1",
+    "name": "Ring Pendant Light",
+    "category": "Lighting",
+    "description": "A statement light for your room",
+    "price": "₹2,899",
+    "image": "images/products/lighting-3-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-3-2",
+    "name": "Glass Jar Candle",
+    "category": "Decor",
+    "description": "A warm finishing touch for your space",
+    "price": "₹1,899",
+    "image": "images/products/decor-3-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-3-2",
+    "name": "The Rustic Round Mirror",
+    "category": "Living",
+    "description": "A simple accent to open up your space",
+    "price": "₹1,899",
+    "image": "images/products/living-3-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-3-2",
+    "name": "Coastal Serving Bowl",
+    "category": "Dining",
+    "description": "A versatile piece for your dining table",
+    "price": "₹1,099",
+    "image": "images/products/dining-3-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-3-2",
+    "name": "White Hanging Light",
+    "category": "Lighting",
+    "description": "A statement light for your room",
+    "price": "₹3,399",
+    "image": "images/products/lighting-3-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-3-3",
+    "name": "Minimal Candle",
+    "category": "Decor",
+    "description": "A warm finishing touch for your space",
+    "price": "₹1,299",
+    "image": "images/products/decor-3-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-3-3",
+    "name": "Natural Wood Mirror",
+    "category": "Living",
+    "description": "A simple accent to open up your space",
+    "price": "₹2,399",
+    "image": "images/products/living-3-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-3-3",
+    "name": "Minimal Serving Bowl",
+    "category": "Dining",
+    "description": "A versatile piece for your dining table",
+    "price": "₹1,299",
+    "image": "images/products/dining-3-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-3-3",
+    "name": "Oval Pendant Light",
+    "category": "Lighting",
+    "description": "A statement light for your room",
+    "price": "₹4,399",
+    "image": "images/products/lighting-3-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-3-4",
+    "name": "Clear Glass Candle",
+    "category": "Decor",
+    "description": "A warm finishing touch for your space",
+    "price": "₹1,699",
+    "image": "images/products/decor-3-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-3-4",
+    "name": "Whitewashed Wall Mirror",
+    "category": "Living",
+    "description": "A simple accent to open up your space",
+    "price": "₹2,899",
+    "image": "images/products/living-3-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-3-4",
+    "name": "Soup and Pasta Bowl",
+    "category": "Dining",
+    "description": "A versatile piece for your dining table",
+    "price": "₹1,599",
+    "image": "images/products/dining-3-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-3-4",
+    "name": "Cone Pendant Light",
+    "category": "Lighting",
+    "description": "A statement light for your room",
+    "price": "₹5,399",
+    "image": "images/products/lighting-3-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-3-5",
+    "name": "Vanilla Jar Candle",
+    "category": "Decor",
+    "description": "A warm finishing touch for your space",
+    "price": "₹1,999",
+    "image": "images/products/decor-3-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-3-5",
+    "name": "Round Wood Wall Mirror",
+    "category": "Living",
+    "description": "A simple accent to open up your space",
+    "price": "₹3,399",
+    "image": "images/products/living-3-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-3-5",
+    "name": "Neutral Ceramic Bowl",
+    "category": "Dining",
+    "description": "A versatile piece for your dining table",
+    "price": "₹1,899",
+    "image": "images/products/dining-3-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-3-5",
+    "name": "Long Pendant Light",
+    "category": "Lighting",
+    "description": "A statement light for your room",
+    "price": "₹5,899",
+    "image": "images/products/lighting-3-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-4-1",
+    "name": "Sculptural Ceramic Vase",
+    "category": "Decor",
+    "description": "A sculptural piece for your favourite corner",
+    "price": "₹1,799",
+    "image": "images/products/decor-4-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-4-1",
+    "name": "Rectangular Woven Basket",
+    "category": "Living",
+    "description": "Everyday storage with a natural look",
+    "price": "₹1,599",
+    "image": "images/products/living-4-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-4-1",
+    "name": "Wood Serving Tray",
+    "category": "Dining",
+    "description": "Made for serving or styling your table",
+    "price": "₹1,099",
+    "image": "images/products/dining-4-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-4-1",
+    "name": "Modern Wall Sconce",
+    "category": "Lighting",
+    "description": "An elegant wall-mounted lighting accent",
+    "price": "₹3,099",
+    "image": "images/products/lighting-4-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-4-2",
+    "name": "The Arch Sculpture",
+    "category": "Decor",
+    "description": "A sculptural piece for your favourite corner",
+    "price": "₹2,099",
+    "image": "images/products/decor-4-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-4-2",
+    "name": "Natural Shelf Basket",
+    "category": "Living",
+    "description": "Everyday storage with a natural look",
+    "price": "₹2,099",
+    "image": "images/products/living-4-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-4-2",
+    "name": "Acacia Serving Tray",
+    "category": "Dining",
+    "description": "Made for serving or styling your table",
+    "price": "₹1,299",
+    "image": "images/products/dining-4-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-4-2",
+    "name": "Kalli Style Wall Light",
+    "category": "Lighting",
+    "description": "An elegant wall-mounted lighting accent",
+    "price": "₹3,599",
+    "image": "images/products/lighting-4-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-4-3",
+    "name": "Abstract Ceramic Vase",
+    "category": "Decor",
+    "description": "A sculptural piece for your favourite corner",
+    "price": "₹1,499",
+    "image": "images/products/decor-4-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-4-3",
+    "name": "Divided Storage Basket",
+    "category": "Living",
+    "description": "Everyday storage with a natural look",
+    "price": "₹2,599",
+    "image": "images/products/living-4-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-4-3",
+    "name": "Classic Wooden Tray",
+    "category": "Dining",
+    "description": "Made for serving or styling your table",
+    "price": "₹1,499",
+    "image": "images/products/dining-4-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-4-3",
+    "name": "Linear Wall Sconce",
+    "category": "Lighting",
+    "description": "An elegant wall-mounted lighting accent",
+    "price": "₹4,599",
+    "image": "images/products/lighting-4-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-4-4",
+    "name": "Organic Form Sculpture",
+    "category": "Decor",
+    "description": "A sculptural piece for your favourite corner",
+    "price": "₹1,899",
+    "image": "images/products/decor-4-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-4-4",
+    "name": "Lined Woven Basket",
+    "category": "Living",
+    "description": "Everyday storage with a natural look",
+    "price": "₹3,099",
+    "image": "images/products/living-4-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-4-4",
+    "name": "Handled Serving Tray",
+    "category": "Dining",
+    "description": "Made for serving or styling your table",
+    "price": "₹1,799",
+    "image": "images/products/dining-4-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-4-4",
+    "name": "Topo Style Wall Light",
+    "category": "Lighting",
+    "description": "An elegant wall-mounted lighting accent",
+    "price": "₹5,599",
+    "image": "images/products/lighting-4-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-4-5",
+    "name": "Modern Form Vase",
+    "category": "Decor",
+    "description": "A sculptural piece for your favourite corner",
+    "price": "₹2,199",
+    "image": "images/products/decor-4-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-4-5",
+    "name": "Tall Wicker Basket",
+    "category": "Living",
+    "description": "Everyday storage with a natural look",
+    "price": "₹3,599",
+    "image": "images/products/living-4-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-4-5",
+    "name": "Large Wooden Tray",
+    "category": "Dining",
+    "description": "Made for serving or styling your table",
+    "price": "₹2,099",
+    "image": "images/products/dining-4-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-4-5",
+    "name": "Tersus Style Wall Light",
+    "category": "Lighting",
+    "description": "An elegant wall-mounted lighting accent",
+    "price": "₹6,099",
+    "image": "images/products/lighting-4-5.jpg",
+    "badge": ""
+  }
+];
+function load(key, fallback){try{const value=localStorage.getItem(key);return value===null?fallback:JSON.parse(value)}catch{return fallback}}
+let products=load('maison-products',DEFAULT_PRODUCTS);
+if(!Array.isArray(products)) products=DEFAULT_PRODUCTS;
+// Add the newly introduced examples once for browsers using the previous version.
+try {
+ if (localStorage.getItem('maison-products') !== null && !localStorage.getItem('maison-catalogue-80-v1')) {
+  const known = new Set(products.map(p => p.id));
+  const added = DEFAULT_PRODUCTS.filter(p => p.id.startsWith('demo-') && !known.has(p.id));
+  const updated = [...products, ...added];
+  localStorage.setItem('maison-products', JSON.stringify(updated));
+  products = updated;
+ }
+ localStorage.setItem('maison-catalogue-80-v1', '1');
+} catch (error) { console.warn('Could not update locally saved products:', error); }
+
+let selected=load('maison-enquiry',[]);
+if(!Array.isArray(selected)) selected=[];
+selected=selected.filter(id=>products.some(p=>p.id===id));
+let category='All', lastFocus=null;
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const grid=$('#product-grid'), overlay=$('#overlay'), drawer=$('#drawer'), manager=$('#manager-modal');
+const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function render(){
+ const query=$('#search').value.trim().toLowerCase();
+ const filtered=products.filter(p=>(category==='All'||p.category===category)&&`${p.name} ${p.category} ${p.description}`.toLowerCase().includes(query));
+ const card = p => `<article class="product-card"><div class="product-image"><img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">${p.badge?`<span class="badge">${esc(p.badge)}</span>`:''}</div><div class="product-info"><div class="product-category">${esc(p.category)}</div><h3>${esc(p.name)}</h3><p class="product-description">${esc(p.description)}</p><div class="product-bottom"><span class="price">${esc(p.price)}</span><button class="add-btn ${selected.includes(p.id)?'added':''}" data-add="${esc(p.id)}" aria-pressed="${selected.includes(p.id)}">${selected.includes(p.id)?'✓ Added to list':'+ Add to enquiry'}</button></div></div></article>`;
+ if (document.body.classList.contains('collection-page')) {
+  const categories = category === 'All' ? ['Decor','Living','Dining','Lighting'] : [category];
+  grid.innerHTML=categories.map(cat=>{const group=filtered.filter(p=>p.category===cat);return group.length?`<section class="category-group" aria-label="${esc(cat)}"><div class="category-heading"><div><span>EXPLORE BY CATEGORY</span><h3>${esc(cat)}<em>.</em></h3></div><span>${String(group.length).padStart(2,'0')} ${group.length===1?'PIECE':'PIECES'}</span></div><div class="product-grid">${group.map(card).join('')}</div></section>`:''}).join('');
+ } else { grid.innerHTML=filtered.slice(0,8).map(card).join(''); }
+ $('#empty').hidden=filtered.length>0;$('.count').textContent=selected.length;$('#all-count').textContent=String(products.length).padStart(2,'0');
+ $('#drawer-items').innerHTML=selected.length?selected.map(id=>{const p=products.find(x=>x.id===id);return `<div class="drawer-item"><img src="${esc(p.image)}" alt=""><div><span class="product-category">${esc(p.category)}</span><h3>${esc(p.name)}</h3><p>${esc(p.price)}</p></div><button class="remove" data-remove="${esc(id)}">Remove</button></div>`}).join(''):'<div class="drawer-empty">Your list is waiting for a little inspiration.<br>Explore the collection and add your favourites.</div>';
+ $('#send-list').disabled=!selected.length;$('#send-list').style.opacity=selected.length?'1':'.5';
+ $('#manager-count').textContent=`${products.length} ${products.length===1?'PRODUCT':'PRODUCTS'}`;
+ $('#manage-list').innerHTML=products.length?products.map(p=>`<div class="manage-row"><img src="${esc(p.image)}" alt=""><div class="manage-info"><strong>${esc(p.name)}</strong><small>${esc(p.category)} · ${esc(p.price)}</small></div><button type="button" data-edit="${esc(p.id)}">Edit</button><button type="button" class="delete" data-delete="${esc(p.id)}">Delete</button></div>`).join(''):'<p>No products yet. Add your first product above.</p>';
+}
+function persistSelected(){try{localStorage.setItem('maison-enquiry',JSON.stringify(selected))}catch{showToast('Could not save the enquiry list in this browser')}render()}
+function saveProducts(next){try{localStorage.setItem('maison-products',JSON.stringify(next));products=next;return true}catch{ $('#product-error').textContent='Could not save products. Browser storage may be full; try a smaller image or remove some products.';return false}}
+function showToast(message){const t=$('.toast');t.textContent=message;t.classList.add('show');clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>t.classList.remove('show'),2400)}
+function showPanel(panel){lastFocus=document.activeElement;overlay.hidden=false;[drawer,manager].forEach(p=>{p.classList.remove('open');p.setAttribute('aria-hidden','true')});panel.classList.add('open');panel.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(()=>panel.querySelector('button, input')?.focus(),50)}
+function closePanels(){overlay.hidden=true;[drawer,manager].forEach(p=>{p.classList.remove('open');p.setAttribute('aria-hidden','true')});document.body.style.overflow='';lastFocus?.focus()}
+function whatsapp(message){window.open(`https://wa.me/${BUSINESS_WHATSAPP}?text=${encodeURIComponent(message)}`,'_blank','noopener,noreferrer')}
+function general(){whatsapp("Hello! I found your catalogue and I'd love to know more about your products.")}
+function resetForm(){$('#product-form').reset();$('#edit-id').value='';$('#save-product').innerHTML='Add product <span>↗</span>';$('#cancel-edit').hidden=true;$('#product-error').textContent=''}
+function readImage(file){return new Promise((resolve,reject)=>{if(!['image/jpeg','image/png','image/webp'].includes(file.type))return reject(new Error('Please choose a JPG, PNG or WebP image.'));if(file.size>10*1024*1024)return reject(new Error('Please choose an image smaller than 10 MB.'));const reader=new FileReader();reader.onerror=()=>reject(new Error('Could not read this image.'));reader.onload=()=>{const img=new Image();img.onerror=()=>reject(new Error('Could not open this image.'));img.onload=()=>{try{const scale=Math.min(1,800/Math.max(img.width,img.height));const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);resolve(canvas.toDataURL('image/jpeg',.78))}catch{reject(new Error('Could not process this image.'))}};img.src=reader.result};reader.readAsDataURL(file)})}
+$('.filters').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(!b)return;category=b.dataset.category;$$('.filter').forEach(x=>x.classList.toggle('active',x===b));render()});
+$('#search').addEventListener('input',render);$('#clear-filters').addEventListener('click',()=>{category='All';$('#search').value='';$$('.filter').forEach(x=>x.classList.toggle('active',x.dataset.category==='All'));render()});
+grid.addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(!b)return;const id=b.dataset.add;if(selected.includes(id)){selected=selected.filter(x=>x!==id);showToast('Removed from your enquiry list')}else{selected.push(id);showToast('Added to your enquiry list')}persistSelected()});
+$('#drawer-items').addEventListener('click',e=>{const b=e.target.closest('[data-remove]');if(b){selected=selected.filter(id=>id!==b.dataset.remove);persistSelected()}});
+$$('[data-open-drawer]').forEach(b=>b.addEventListener('click',()=>showPanel(drawer)));$$('[data-general-enquiry]').forEach(b=>b.addEventListener('click',general));$$('[data-close]').forEach(b=>b.addEventListener('click',closePanels));overlay.addEventListener('click',closePanels);
+$$('[data-manage-products]').forEach(b=>b.addEventListener('click',()=>{resetForm();showPanel(manager)}));
+$('#send-list').addEventListener('click',()=>{if(!selected.length)return;const lines=selected.map((id,i)=>{const p=products.find(p=>p.id===id);return `${i+1}. ${p.name} (${p.price})`});const note=$('#note').value.trim();whatsapp(`Hello! I'd like to enquire about these products from your catalogue:\n\n${lines.join('\n')}${note?'\n\nMy question: '+note:''}\n\nPlease share the availability and details. Thank you!`)});
+$('#product-form').addEventListener('submit',async e=>{e.preventDefault();const button=$('#save-product');button.disabled=true;$('#product-error').textContent='';try{const id=$('#edit-id').value, old=products.find(p=>p.id===id), file=$('#product-image').files[0];const image=file?await readImage(file):(old?.image||'images/placeholder.svg');const product={id:id||('product-'+Date.now()+'-'+Math.random().toString(36).slice(2,8)),name:$('#product-name').value.trim(),category:$('#product-category').value,price:'₹'+Number($('#product-price').value).toLocaleString('en-IN',{maximumFractionDigits:2}),description:$('#product-description').value.trim(),image,badge:old?.badge||''};if(!product.name){$('#product-error').textContent='Please enter a product name.';return}const next=id?products.map(p=>p.id===id?product:p):[product,...products];if(saveProducts(next)){resetForm();render();showToast(id?'Product updated':'Product added to your catalogue')}}catch(error){$('#product-error').textContent=error.message||'Could not save this product.'}finally{button.disabled=false}});
+$('#manage-list').addEventListener('click',e=>{const edit=e.target.closest('[data-edit]'),del=e.target.closest('[data-delete]');if(edit){const p=products.find(x=>x.id===edit.dataset.edit);$('#edit-id').value=p.id;$('#product-name').value=p.name;$('#product-category').value=p.category;$('#product-price').value=p.price.replace(/[^0-9.]/g,'');$('#product-description').value=p.description;$('#product-image').value='';$('#save-product').innerHTML='Save changes <span>↗</span>';$('#cancel-edit').hidden=false;$('#product-error').textContent='';manager.scrollTop=0;$('#product-name').focus()}if(del){const id=del.dataset.delete,p=products.find(x=>x.id===id);if(!confirm(`Delete "${p.name}" from this catalogue?`))return;if(saveProducts(products.filter(x=>x.id!==id))){selected=selected.filter(x=>x!==id);persistSelected();if($('#edit-id').value===id)resetForm();showToast('Product deleted')}}});
+$('#cancel-edit').addEventListener('click',resetForm);
+$('.search-trigger').addEventListener('click',()=>{$('#collection').scrollIntoView();setTimeout(()=>$('#search').focus(),350)});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!overlay.hidden)closePanels();if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('#collection').scrollIntoView();$('#search').focus()}});
+$('.menu-toggle').addEventListener('click',e=>{const nav=$('.main-nav');nav.classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',nav.classList.contains('open'))});$$('.main-nav a').forEach(a=>a.addEventListener('click',()=>{$('.main-nav').classList.remove('open');$('.menu-toggle').setAttribute('aria-expanded','false')}));
+render();

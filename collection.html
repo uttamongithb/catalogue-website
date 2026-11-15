@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A thoughtfully curated home and lifestyle catalogue. Discover pieces and enquire directly on WhatsApp.">
+  <title>Our Collection | Maison & Co.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="collection-page">
+  <div class="announcement">SAMPLE CATALOGUE & PRICES <span>✳</span> ENQUIRE WITH US ON WHATSAPP</div>
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="Maison and Co home"><span class="brand-mark">m<span>.</span></span><span>maison <i>&</i> co.<small>THE ART OF EVERYDAY</small></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="collection.html">Our collection</a><a href="index.html#story">Our story</a></nav>
+    <div class="header-actions"><button class="manage-trigger" data-manage-products>+ <span>Manage products</span></button><button class="icon-button search-trigger" aria-label="Search products" title="Search products"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 4 4"></path></svg></button><button class="enquiry-top" data-open-drawer><span class="bag-icon">▱</span> Enquiry list <span class="count">0</span></button><button class="menu-toggle icon-button" aria-label="Open menu" aria-expanded="false">☰</button></div>
+  </header>
+  <main id="top">
+    <div class="collection-intro"><div class="eyebrow muted"><span></span> MADE FOR THE EVERYDAY</div><h1>Our collection<span>.</span></h1><p>Thoughtfully chosen pieces for a home that feels just like you. Explore by category and save your favourites to enquire.</p></div>
+    <section class="collection section-wrap" id="collection">
+      <div class="section-heading"><div><div class="eyebrow muted"><span></span> EXPLORE THE COLLECTION</div><h2>Find your favourites<span>.</span></h2><p>Explore 80 sample products, grouped by category. Prices are examples.</p></div></div>
+      <div class="toolbar"><div class="filters" role="group" aria-label="Filter by category"><button class="filter active" data-category="All">All pieces <span id="all-count">06</span></button><button class="filter" data-category="Decor">Decor</button><button class="filter" data-category="Living">Living</button><button class="filter" data-category="Dining">Dining</button><button class="filter" data-category="Lighting">Lighting</button></div><label class="search-box"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 4 4"></path></svg><input id="search" type="search" placeholder="Search the collection" aria-label="Search the collection"><span>⌘ K</span></label></div>
+      <div class="category-collections" id="product-grid"></div><div id="empty" class="empty" hidden>No pieces found. Try another search or category. <button id="clear-filters">Clear filters</button></div>
+      <div class="collection-bottom"><span>CURATED WITH CARE, ALWAYS.</span><p>Can't find what you're looking for? <button class="inline-link" data-general-enquiry>Let's talk ↗</button></p></div>
+    </section>
+    <section class="contact-banner"><div><div class="eyebrow light"><span></span> WE'D LOVE TO HELP</div><h2>Let's find something lovely.</h2><p>Have a question? We're only a message away.</p></div><button class="button button-light" data-general-enquiry><span class="wa-icon">◉</span> Chat on WhatsApp <span>↗</span></button></section>
+  </main>
+  <footer><div class="footer-main"><div><a href="index.html" class="brand footer-brand"><span class="brand-mark">m<span>.</span></span><span>maison <i>&</i> co.<small>THE ART OF EVERYDAY</small></span></a><p>Thoughtful pieces for the spaces<br>and moments that matter.</p></div><div><strong>EXPLORE</strong><a href="collection.html">Our collection</a><a href="index.html#story">Our story</a></div><div><strong>GET IN TOUCH</strong><button data-general-enquiry>WhatsApp us ↗</button><button data-manage-products>Manage products</button></div><div class="footer-note">A LITTLE MORE BEAUTY<br>IN THE EVERYDAY. <span>✳</span></div></div><div class="footer-bottom"><span>© 2026 MAISON & CO. ALL RIGHTS RESERVED.</span><span>MADE FOR THE WAY YOU LIVE.</span></div></footer>
+  <button class="floating-wa" data-general-enquiry aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-3.9Z"></path><path d="M8.5 8.2c.3-.4.6-.4.8-.1l1 1.5c.2.3 0 .6-.3.9l-.4.4c.6 1.2 1.4 2 2.7 2.6l.5-.6c.2-.3.5-.4.8-.2l1.5.8c.3.2.4.5.2.8-.4.8-1.1 1.2-2 1.1-2.9-.5-5.2-2.6-5.9-5.4-.2-.7.2-1.4 1.1-1.8Z"></path></svg></button>
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true"><div class="drawer-head"><div><div class="eyebrow muted"><span></span> YOUR FAVOURITES</div><h2 id="drawer-title">Your enquiry list<span>.</span></h2></div><button class="close" data-close aria-label="Close enquiry list">×</button></div><p class="drawer-intro">A little list of things you love. Send it our way and we'll take it from there.</p><div id="drawer-items" class="drawer-items"></div><div class="drawer-footer"><label for="note">Anything else? <span>OPTIONAL</span></label><textarea id="note" placeholder="Ask us about availability, details, or anything else..."></textarea><button id="send-list" class="button button-dark full">Send enquiry on WhatsApp <span>↗</span></button><p>Opens WhatsApp with your message ready to send.</p></div></aside>
+  <div class="modal manager-modal" id="manager-modal" role="dialog" aria-modal="true" aria-labelledby="manager-title" aria-hidden="true">
+    <button class="close modal-close" data-close aria-label="Close product manager">×</button>
+    <div class="eyebrow muted"><span></span> YOUR CATALOGUE</div><h2 id="manager-title">Manage products<span>.</span></h2>
+    <p>Add your own products below. Products are saved in this browser on this device only.</p>
+    <form id="product-form">
+      <input type="hidden" id="edit-id">
+      <div class="form-grid"><div><label for="product-name">Product name *</label><input id="product-name" maxlength="80" placeholder="e.g. Handmade vase" required></div><div><label for="product-category">Category *</label><select id="product-category" required><option>Decor</option><option>Living</option><option>Dining</option><option>Lighting</option></select></div>
+      <div><label for="product-price">Price (₹) *</label><input id="product-price" type="number" min="0" step="0.01" placeholder="e.g. 1299" required></div><div><label for="product-image">Product photo</label><input id="product-image" type="file" accept="image/jpeg,image/png,image/webp"></div></div>
+      <label for="product-description">Short description</label><input id="product-description" maxlength="120" placeholder="Tell customers a little about it">
+      <small>JPG, PNG or WebP. Images are resized to save browser storage. Leave the photo blank when editing to keep the current one.</small>
+      <div class="error" id="product-error" role="alert"></div><div class="manager-actions"><button class="button button-dark" type="submit" id="save-product">Add product <span>↗</span></button><button type="button" id="cancel-edit" class="cancel-edit" hidden>Cancel edit</button></div>
+    </form>
+    <div class="manage-list-head"><strong>YOUR PRODUCTS</strong><span id="manager-count"></span></div><div id="manage-list" class="manage-list"></div>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body></html>
