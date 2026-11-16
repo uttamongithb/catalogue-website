@@ -1,12 +1,23 @@
 // Your WhatsApp business number, with country code and without + or spaces.
 const BUSINESS_WHATSAPP = '917992081882';
-// Products are supplied by the server; enquiry selections remain local to each visitor.
+// On a server deployment, load the shared catalogue from the API. Static hosts
+// (such as GitHub Pages) use the checked-in product snapshot instead.
 function load(key, fallback){try{const value=localStorage.getItem(key);return value===null?fallback:JSON.parse(value)}catch{return fallback}}
 let products=[];
 async function refreshProducts(){
- try { const response=await fetch('/api/products',{cache:'no-store'}); if(!response.ok) throw Error(); products=await response.json(); selected=selected.filter(id=>products.some(p=>p.id===id)); render(); }
- catch { $('#empty').hidden=false; $('#empty').textContent='The catalogue could not be loaded. Please try again later.'; }
+ try {
+  let response;
+  try { response=await fetch('/api/products',{cache:'no-store'}); } catch { response=null; }
+  const isStaticHost=!response||response.status===404||response.status===405||
+    (response.ok && !(response.headers.get('content-type')||'').includes('application/json'));
+  if(isStaticHost) response=await fetch('./products.json',{cache:'no-store'});
+  if(!response.ok) throw new Error('Catalogue request failed');
+  const data=await response.json();
+  if(!Array.isArray(data)) throw new Error('Invalid catalogue data');
+  products=data; selected=selected.filter(id=>products.some(p=>p.id===id)); render();
+ } catch { $('#empty').hidden=false; $('#empty').textContent='The catalogue could not be loaded. Please try again later.'; }
 }
+
 let selected=load('maison-enquiry',[]);
 if(!Array.isArray(selected)) selected=[];
 let category='All', lastFocus=null;

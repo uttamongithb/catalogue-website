@@ -64,7 +64,7 @@ class Handler(BaseHTTPRequestHandler):
   if path=='/api/session':return self.json(200,{'authenticated':self.authenticated()})
   if path=='/':path='/index.html'
   decoded=unquote(path).lstrip('/')
-  if decoded not in {'index.html','collection.html','admin.html','admin.css','admin.js','style.css','script.js'} and not decoded.startswith('images/'):
+  if decoded not in {'index.html','collection.html','admin.html','admin.css','admin.js','style.css','script.js','products.json'} and not decoded.startswith('images/'):
    return self.send_error(404)
   file=(ROOT/decoded).resolve()
   if not file.is_relative_to(ROOT) or not file.is_file():return self.send_error(404)
