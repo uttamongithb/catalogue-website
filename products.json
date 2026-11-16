@@ -1,0 +1,722 @@
+[
+  {
+    "id": "vase",
+    "name": "The Forma Vase",
+    "category": "Decor",
+    "description": "A sculptural touch for any corner",
+    "price": "₹1,299",
+    "image": "images/vase.jpg",
+    "badge": ""
+  },
+  {
+    "id": "cushion",
+    "name": "The Linen Cushion",
+    "category": "Living",
+    "description": "Soft texture, effortless comfort",
+    "price": "₹1,499",
+    "image": "images/cushion.jpg",
+    "badge": ""
+  },
+  {
+    "id": "mug",
+    "name": "The Everyday Mug",
+    "category": "Dining",
+    "description": "For your favourite slow mornings",
+    "price": "₹799",
+    "image": "images/mug.jpg",
+    "badge": ""
+  },
+  {
+    "id": "lamp",
+    "name": "The Sol Table Lamp",
+    "category": "Lighting",
+    "description": "A little warmth, wherever it goes",
+    "price": "₹3,499",
+    "image": "images/lamp.jpg",
+    "badge": ""
+  },
+  {
+    "id": "tray",
+    "name": "The Gather Tray",
+    "category": "Decor",
+    "description": "A home for your little essentials",
+    "price": "₹1,199",
+    "image": "images/tray.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-1-2",
+    "name": "Floral Cushion Cover",
+    "category": "Living",
+    "description": "A cosy layer for the living room",
+    "price": "₹1,499",
+    "image": "images/products/living-1-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-1-2",
+    "name": "Classic Ceramic Mug",
+    "category": "Dining",
+    "description": "A lovely companion for everyday sips",
+    "price": "₹699",
+    "image": "images/products/dining-1-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-1-2",
+    "name": "Pleated Shade Table Lamp",
+    "category": "Lighting",
+    "description": "A soft accent for the spaces you love",
+    "price": "₹2,999",
+    "image": "images/products/lighting-1-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "vase2",
+    "name": "The Mini Ceramic Vase",
+    "category": "Decor",
+    "description": "A simple piece with a lot of charm",
+    "price": "₹899",
+    "image": "images/vase2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-1-3",
+    "name": "Textured Cushion Cover",
+    "category": "Living",
+    "description": "A cosy layer for the living room",
+    "price": "₹1,999",
+    "image": "images/products/living-1-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-1-3",
+    "name": "Minimal Coffee Mug",
+    "category": "Dining",
+    "description": "A lovely companion for everyday sips",
+    "price": "₹899",
+    "image": "images/products/dining-1-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-1-3",
+    "name": "Textured Table Lamp",
+    "category": "Lighting",
+    "description": "A soft accent for the spaces you love",
+    "price": "₹3,999",
+    "image": "images/products/lighting-1-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-1-4",
+    "name": "Matte Vase Collection",
+    "category": "Decor",
+    "description": "A decorative accent for shelves and tables",
+    "price": "₹1,299",
+    "image": "images/products/decor-1-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-1-4",
+    "name": "Block Print Cushion Cover",
+    "category": "Living",
+    "description": "A cosy layer for the living room",
+    "price": "₹2,499",
+    "image": "images/products/living-1-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-1-4",
+    "name": "Cream Stoneware Mug",
+    "category": "Dining",
+    "description": "A lovely companion for everyday sips",
+    "price": "₹1,199",
+    "image": "images/products/dining-1-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-1-4",
+    "name": "Round Ceramic Table Lamp",
+    "category": "Lighting",
+    "description": "A soft accent for the spaces you love",
+    "price": "₹4,999",
+    "image": "images/products/lighting-1-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-1-5",
+    "name": "Neutral Vase Set",
+    "category": "Decor",
+    "description": "A decorative accent for shelves and tables",
+    "price": "₹1,599",
+    "image": "images/products/decor-1-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-1-5",
+    "name": "Soft Fringe Cushion Cover",
+    "category": "Living",
+    "description": "A cosy layer for the living room",
+    "price": "₹2,999",
+    "image": "images/products/living-1-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-1-5",
+    "name": "Two Tone Ceramic Mug",
+    "category": "Dining",
+    "description": "A lovely companion for everyday sips",
+    "price": "₹1,499",
+    "image": "images/products/dining-1-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-1-5",
+    "name": "Adair Style Table Lamp",
+    "category": "Lighting",
+    "description": "A soft accent for the spaces you love",
+    "price": "₹5,499",
+    "image": "images/products/lighting-1-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-2-1",
+    "name": "Ivory Ceramic Planter",
+    "category": "Decor",
+    "description": "A fresh home for your favourite greenery",
+    "price": "₹1,399",
+    "image": "images/products/decor-2-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-2-1",
+    "name": "Jacquard Throw",
+    "category": "Living",
+    "description": "An inviting layer for slower moments",
+    "price": "₹1,199",
+    "image": "images/products/living-2-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-2-1",
+    "name": "Taupe Dinner Plate",
+    "category": "Dining",
+    "description": "An easy addition to your table setting",
+    "price": "₹699",
+    "image": "images/products/dining-2-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-2-1",
+    "name": "White Linen Floor Lamp",
+    "category": "Lighting",
+    "description": "An ambient light for a cosy corner",
+    "price": "₹2,699",
+    "image": "images/products/lighting-2-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-2-2",
+    "name": "Patterned Planter Pot",
+    "category": "Decor",
+    "description": "A fresh home for your favourite greenery",
+    "price": "₹1,699",
+    "image": "images/products/decor-2-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-2-2",
+    "name": "Fleur Throw Blanket",
+    "category": "Living",
+    "description": "An inviting layer for slower moments",
+    "price": "₹1,699",
+    "image": "images/products/living-2-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-2-2",
+    "name": "Green Dinner Plate",
+    "category": "Dining",
+    "description": "An easy addition to your table setting",
+    "price": "₹899",
+    "image": "images/products/dining-2-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-2-2",
+    "name": "Slim Linen Floor Lamp",
+    "category": "Lighting",
+    "description": "An ambient light for a cosy corner",
+    "price": "₹3,199",
+    "image": "images/products/lighting-2-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-2-3",
+    "name": "Modern Planter Set",
+    "category": "Decor",
+    "description": "A fresh home for your favourite greenery",
+    "price": "₹1,099",
+    "image": "images/products/decor-2-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-2-3",
+    "name": "Striped Fringe Throw",
+    "category": "Living",
+    "description": "An inviting layer for slower moments",
+    "price": "₹2,199",
+    "image": "images/products/living-2-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-2-3",
+    "name": "Speckled Dinner Plate",
+    "category": "Dining",
+    "description": "An easy addition to your table setting",
+    "price": "₹1,099",
+    "image": "images/products/dining-2-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-2-3",
+    "name": "Modern Floor Lamp",
+    "category": "Lighting",
+    "description": "An ambient light for a cosy corner",
+    "price": "₹4,199",
+    "image": "images/products/lighting-2-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-2-4",
+    "name": "Minimal Indoor Planter",
+    "category": "Decor",
+    "description": "A fresh home for your favourite greenery",
+    "price": "₹1,499",
+    "image": "images/products/decor-2-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-2-4",
+    "name": "Geometric Throw",
+    "category": "Living",
+    "description": "An inviting layer for slower moments",
+    "price": "₹2,699",
+    "image": "images/products/living-2-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-2-4",
+    "name": "White Ceramic Plate",
+    "category": "Dining",
+    "description": "An easy addition to your table setting",
+    "price": "₹1,399",
+    "image": "images/products/dining-2-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-2-4",
+    "name": "Cylinder Shade Floor Lamp",
+    "category": "Lighting",
+    "description": "An ambient light for a cosy corner",
+    "price": "₹5,199",
+    "image": "images/products/lighting-2-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-2-5",
+    "name": "Chevron Planter Pot",
+    "category": "Decor",
+    "description": "A fresh home for your favourite greenery",
+    "price": "₹1,799",
+    "image": "images/products/decor-2-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-2-5",
+    "name": "Tassel Throw Blanket",
+    "category": "Living",
+    "description": "An inviting layer for slower moments",
+    "price": "₹3,199",
+    "image": "images/products/living-2-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-2-5",
+    "name": "Earthy Rimmed Plate",
+    "category": "Dining",
+    "description": "An easy addition to your table setting",
+    "price": "₹1,699",
+    "image": "images/products/dining-2-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-2-5",
+    "name": "Contemporary Floor Lamp",
+    "category": "Lighting",
+    "description": "An ambient light for a cosy corner",
+    "price": "₹5,699",
+    "image": "images/products/lighting-2-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-3-1",
+    "name": "The Everyday Candle",
+    "category": "Decor",
+    "description": "A warm finishing touch for your space",
+    "price": "₹1,599",
+    "image": "images/products/decor-3-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-3-1",
+    "name": "Round Rope Mirror",
+    "category": "Living",
+    "description": "A simple accent to open up your space",
+    "price": "₹1,399",
+    "image": "images/products/living-3-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-3-1",
+    "name": "Speckled Bowl Set",
+    "category": "Dining",
+    "description": "A versatile piece for your dining table",
+    "price": "₹899",
+    "image": "images/products/dining-3-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-3-1",
+    "name": "Ring Pendant Light",
+    "category": "Lighting",
+    "description": "A statement light for your room",
+    "price": "₹2,899",
+    "image": "images/products/lighting-3-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-3-2",
+    "name": "Glass Jar Candle",
+    "category": "Decor",
+    "description": "A warm finishing touch for your space",
+    "price": "₹1,899",
+    "image": "images/products/decor-3-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-3-2",
+    "name": "The Rustic Round Mirror",
+    "category": "Living",
+    "description": "A simple accent to open up your space",
+    "price": "₹1,899",
+    "image": "images/products/living-3-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-3-2",
+    "name": "Coastal Serving Bowl",
+    "category": "Dining",
+    "description": "A versatile piece for your dining table",
+    "price": "₹1,099",
+    "image": "images/products/dining-3-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-3-2",
+    "name": "White Hanging Light",
+    "category": "Lighting",
+    "description": "A statement light for your room",
+    "price": "₹3,399",
+    "image": "images/products/lighting-3-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-3-3",
+    "name": "Minimal Candle",
+    "category": "Decor",
+    "description": "A warm finishing touch for your space",
+    "price": "₹1,299",
+    "image": "images/products/decor-3-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-3-3",
+    "name": "Natural Wood Mirror",
+    "category": "Living",
+    "description": "A simple accent to open up your space",
+    "price": "₹2,399",
+    "image": "images/products/living-3-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-3-3",
+    "name": "Minimal Serving Bowl",
+    "category": "Dining",
+    "description": "A versatile piece for your dining table",
+    "price": "₹1,299",
+    "image": "images/products/dining-3-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-3-3",
+    "name": "Oval Pendant Light",
+    "category": "Lighting",
+    "description": "A statement light for your room",
+    "price": "₹4,399",
+    "image": "images/products/lighting-3-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-3-4",
+    "name": "Clear Glass Candle",
+    "category": "Decor",
+    "description": "A warm finishing touch for your space",
+    "price": "₹1,699",
+    "image": "images/products/decor-3-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-3-4",
+    "name": "Whitewashed Wall Mirror",
+    "category": "Living",
+    "description": "A simple accent to open up your space",
+    "price": "₹2,899",
+    "image": "images/products/living-3-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-3-4",
+    "name": "Soup and Pasta Bowl",
+    "category": "Dining",
+    "description": "A versatile piece for your dining table",
+    "price": "₹1,599",
+    "image": "images/products/dining-3-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-3-4",
+    "name": "Cone Pendant Light",
+    "category": "Lighting",
+    "description": "A statement light for your room",
+    "price": "₹5,399",
+    "image": "images/products/lighting-3-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-3-5",
+    "name": "Vanilla Jar Candle",
+    "category": "Decor",
+    "description": "A warm finishing touch for your space",
+    "price": "₹1,999",
+    "image": "images/products/decor-3-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-3-5",
+    "name": "Round Wood Wall Mirror",
+    "category": "Living",
+    "description": "A simple accent to open up your space",
+    "price": "₹3,399",
+    "image": "images/products/living-3-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-3-5",
+    "name": "Neutral Ceramic Bowl",
+    "category": "Dining",
+    "description": "A versatile piece for your dining table",
+    "price": "₹1,899",
+    "image": "images/products/dining-3-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-3-5",
+    "name": "Long Pendant Light",
+    "category": "Lighting",
+    "description": "A statement light for your room",
+    "price": "₹5,899",
+    "image": "images/products/lighting-3-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-4-1",
+    "name": "Sculptural Ceramic Vase",
+    "category": "Decor",
+    "description": "A sculptural piece for your favourite corner",
+    "price": "₹1,799",
+    "image": "images/products/decor-4-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-4-1",
+    "name": "Rectangular Woven Basket",
+    "category": "Living",
+    "description": "Everyday storage with a natural look",
+    "price": "₹1,599",
+    "image": "images/products/living-4-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-4-1",
+    "name": "Wood Serving Tray",
+    "category": "Dining",
+    "description": "Made for serving or styling your table",
+    "price": "₹1,099",
+    "image": "images/products/dining-4-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-4-1",
+    "name": "Modern Wall Sconce",
+    "category": "Lighting",
+    "description": "An elegant wall-mounted lighting accent",
+    "price": "₹3,099",
+    "image": "images/products/lighting-4-1.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-4-2",
+    "name": "The Arch Sculpture",
+    "category": "Decor",
+    "description": "A sculptural piece for your favourite corner",
+    "price": "₹2,099",
+    "image": "images/products/decor-4-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-4-2",
+    "name": "Natural Shelf Basket",
+    "category": "Living",
+    "description": "Everyday storage with a natural look",
+    "price": "₹2,099",
+    "image": "images/products/living-4-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-4-2",
+    "name": "Acacia Serving Tray",
+    "category": "Dining",
+    "description": "Made for serving or styling your table",
+    "price": "₹1,299",
+    "image": "images/products/dining-4-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-4-2",
+    "name": "Kalli Style Wall Light",
+    "category": "Lighting",
+    "description": "An elegant wall-mounted lighting accent",
+    "price": "₹3,599",
+    "image": "images/products/lighting-4-2.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-4-3",
+    "name": "Abstract Ceramic Vase",
+    "category": "Decor",
+    "description": "A sculptural piece for your favourite corner",
+    "price": "₹1,499",
+    "image": "images/products/decor-4-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-4-3",
+    "name": "Divided Storage Basket",
+    "category": "Living",
+    "description": "Everyday storage with a natural look",
+    "price": "₹2,599",
+    "image": "images/products/living-4-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-4-3",
+    "name": "Classic Wooden Tray",
+    "category": "Dining",
+    "description": "Made for serving or styling your table",
+    "price": "₹1,499",
+    "image": "images/products/dining-4-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-4-3",
+    "name": "Linear Wall Sconce",
+    "category": "Lighting",
+    "description": "An elegant wall-mounted lighting accent",
+    "price": "₹4,599",
+    "image": "images/products/lighting-4-3.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-4-4",
+    "name": "Organic Form Sculpture",
+    "category": "Decor",
+    "description": "A sculptural piece for your favourite corner",
+    "price": "₹1,899",
+    "image": "images/products/decor-4-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-4-4",
+    "name": "Lined Woven Basket",
+    "category": "Living",
+    "description": "Everyday storage with a natural look",
+    "price": "₹3,099",
+    "image": "images/products/living-4-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-4-4",
+    "name": "Handled Serving Tray",
+    "category": "Dining",
+    "description": "Made for serving or styling your table",
+    "price": "₹1,799",
+    "image": "images/products/dining-4-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-4-4",
+    "name": "Topo Style Wall Light",
+    "category": "Lighting",
+    "description": "An elegant wall-mounted lighting accent",
+    "price": "₹5,599",
+    "image": "images/products/lighting-4-4.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-decor-4-5",
+    "name": "Modern Form Vase",
+    "category": "Decor",
+    "description": "A sculptural piece for your favourite corner",
+    "price": "₹2,199",
+    "image": "images/products/decor-4-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-living-4-5",
+    "name": "Tall Wicker Basket",
+    "category": "Living",
+    "description": "Everyday storage with a natural look",
+    "price": "₹3,599",
+    "image": "images/products/living-4-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-dining-4-5",
+    "name": "Large Wooden Tray",
+    "category": "Dining",
+    "description": "Made for serving or styling your table",
+    "price": "₹2,099",
+    "image": "images/products/dining-4-5.jpg",
+    "badge": ""
+  },
+  {
+    "id": "demo-lighting-4-5",
+    "name": "Tersus Style Wall Light",
+    "category": "Lighting",
+    "description": "An elegant wall-mounted lighting accent",
+    "price": "₹6,099",
+    "image": "images/products/lighting-4-5.jpg",
+    "badge": ""
+  }
+]

@@ -1,14 +1,16 @@
 # Maison & Co. catalogue
 
-A responsive catalogue built with HTML, CSS and vanilla JavaScript. Run with a static server, e.g. `python3 -m http.server 8000`, then open `http://localhost:8000`.
+A catalogue with a password-protected admin panel and shared server-side product storage. It requires Python 3.9 or later; there are no third-party dependencies.
 
-## Manage products
-Click **Manage products** in the header or footer. Add a name, category, price, optional description and photo. Edit or delete existing products in the same panel. The example products can all be edited or deleted. Product photos are resized and stored in the browser.
+## Run locally
+1. Set a long, unique admin password in the server environment. For example, on macOS/Linux:
+   `export ADMIN_PASSWORD='replace-with-a-long-random-password'`
+2. Run `python3 server.py` and open `http://localhost:8002`.
+3. Use **Admin** in the header to sign in, then add, edit or delete products. Visitors see the shared catalogue; enquiry selections are stored only in their own browser.
 
-Products and enquiry selections are saved in **localStorage in this browser on this device**, not in a shared server database. They persist on reload but can be cleared with browser data, are limited by browser storage, and will not appear on other devices or in other browsers. The manager is not password protected; anyone using this browser can edit its local catalogue. To share products with customers across devices, a server/database and authenticated admin are needed.
+The password is verified on the server, not in the webpage. Authenticated admin sessions expire after eight hours or on server restart. Product changes persist in `data/catalogue.sqlite3` on the server. Back up this database and use persistent storage when deploying; it is ignored by Git. The initial example data is loaded only on the first run. Browser-local products created by earlier versions are not automatically transferred to the shared catalogue.
 
-Customers can add multiple products to the enquiry list and open a pre-filled WhatsApp message. The configured WhatsApp number is +91 79920 81882 (`BUSINESS_WHATSAPP` in `script.js`). The customer must press Send in WhatsApp.
+## Public deployment
+This is a server-based app, not a static GitHub Pages website. Deploy `server.py` on a Python-capable host with persistent disk storage and HTTPS, set `ADMIN_PASSWORD` securely as an environment variable, and use a TLS-terminating reverse proxy. `PORT` and `CATALOGUE_DATA_DIR` are optional environment variables. Never commit your password or database. For a production business deployment, arrange professional security review, backups, monitoring and robust distributed login rate limiting.
 
-The sample business name, copy, prices and products are examples. Replace the sample photos before commercial use: they come from third-party listings and may require permission. The hero image is AI-generated.
-
-The default catalogue now contains 80 example products, 20 per category. Names and prices are illustrative, not verified inventory. Product photos include third-party search results and may not match actual items or be licensed for commercial use; replace them with your own product photos and details before publishing. Existing locally saved catalogues receive the newly added examples once on this device; previously deleted original products stay deleted.
+WhatsApp enquiries go to +91 79920 81882, set in `script.js`. Customers must press Send in WhatsApp. The 80 initial products, prices and photos are examples. Third-party sample photos may require permission; replace them with your own before commercial use.
